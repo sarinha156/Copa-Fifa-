@@ -33,7 +33,10 @@ namespace Library.Models
         private DateTime dtConvocacao;
         private DateTime dtDispensa;
         private PosicaoEnum posicao;
-        
+        private int Days;
+        private decimal Inde;
+        private decimal Conta;
+
 
         public int Id { get => id; set => id = value; }
         public string NmNome { get => nmNome; set => nmNome = value; }
@@ -43,6 +46,10 @@ namespace Library.Models
         public DateTime DtConvocacao { get => dtConvocacao; set => dtConvocacao = value; }
         public DateTime DtDispensa { get => dtDispensa; set => dtDispensa = value; }
         public PosicaoEnum Posicao { get => posicao; set => posicao = value; }
+    
+        public decimal Inde1 { get => Inde; set => Inde = value; }
+        public decimal Conta1 { get => Conta; set => Conta = value; }
+        public int Days1 { get => Days; set => Days = value; }
 
         public string ObterDados()
         {
@@ -54,7 +61,16 @@ namespace Library.Models
 
         public int CalcularIdade()
         {
-            return DateTime.Now.Subtract(DtNascimento).Days / 365; 
+            return DateTime.Now.Subtract(DtNascimento).Days / 365;
         }
+        public decimal CalcularIndenizacaoFifa()
+        {
+              Days1 = 30;
+              Inde = DateTime.Now.Subtract(DtDispensa).Days - DateTime.Now.Subtract(DtConvocacao).Days;
+              Conta = Days1 * Inde1 ;
+            return Conta ;
+        }
+        // pegar data convocação e dispença e calcular o tempo q ele jogou para ganhar 
+        //a indenização
     }
 }

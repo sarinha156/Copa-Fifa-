@@ -14,7 +14,7 @@ namespace WebAppCopa
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            if (!Page.IsPostBack)
             {
                 ddlPosicao.DataSource = Enum.GetValues(typeof(PosicaoEnum));
                 ddlPosicao.DataBind();
@@ -44,13 +44,13 @@ namespace WebAppCopa
             j.DtConvocacao = Convert.ToDateTime(txtConvocacao.Text);
             j.DtDispensa = Convert.ToDateTime(txtDispensa.Text);
 
-            lblMensagem.Text = j.ObterDados();            
+            lblMensagem.Text = j.ObterDados();
         }
 
         protected void btnCalcularIdade_Click(object sender, EventArgs e)
         {
             Jogador j = new Jogador(Convert.ToDateTime(txtDataNascimento.Text));
-            
+
             //Antes do construtor.
             //j.DtNascimento = Convert.ToDateTime(txtDataNascimento.Text);
 
@@ -76,7 +76,7 @@ namespace WebAppCopa
                 j.Id = Convert.ToInt32(txtId.Text);
                 j.NmNome = txtNome.Text;
                 j.DtNascimento = Convert.ToDateTime(txtDataNascimento.Text);
-                j.NrCamisa = Convert.ToInt32(txtNumeroCamisa.Text);                
+                j.NrCamisa = Convert.ToInt32(txtNumeroCamisa.Text);
                 j.Posicao = (PosicaoEnum)Enum.Parse(typeof(PosicaoEnum), ddlPosicao.SelectedValue);
 
                 if (j.Posicao == PosicaoEnum.LateralDireito)
@@ -93,12 +93,12 @@ namespace WebAppCopa
 
                 string scriptMensagem = string.Format("<script>ChamarExibirMensagemSucesso('{0}');</script>", j.ObterDados());
                 ClientScript.RegisterStartupScript(this.GetType(), "ChaveMensagem", scriptMensagem);
-          
-               
-                    
 
-                }
-          catch (NomeInvalidoException nEx)
+
+
+
+            }
+            catch (NomeInvalidoException nEx)
             {
                 /* lblMensagem.Text = nEx.Message;
                lblMensagem.ForeColor = System.Drawing.Color.Red; */
@@ -116,9 +116,30 @@ namespace WebAppCopa
                 lblMensagem.ForeColor = System.Drawing.Color.Red;
             }
         }
+
+        protected void btnCalcularIndenizacaoFifa_Click(object sender, EventArgs e)
+        {
+            Jogador j = new Jogador();
+            j.Id = Convert.ToInt32(txtId.Text);
+            j.NmNome = txtNome.Text;
+            j.DtNascimento = Convert.ToDateTime(txtDataNascimento.Text);
+            j.NrCamisa = Convert.ToInt32(txtNumeroCamisa.Text);
+            //j.NmPosição = txtPosicao.Text;
+            j.Posicao = (PosicaoEnum)Enum.Parse(typeof(PosicaoEnum), ddlPosicao.SelectedValue);
+
+            if (j.Posicao == PosicaoEnum.LateralDireito)
+                j.NmPosicao = "Lateral Direito";
+            else if (j.Posicao == PosicaoEnum.LateralEsquerdo)
+                j.NmPosicao = "Lateral Esquerdo";
+            else if (j.Posicao == PosicaoEnum.MeioCampo)
+                j.NmPosicao = "Meio Campo";
+            else
+                j.NmPosicao = j.Posicao.ToString();
+
+            j.DtConvocacao = Convert.ToDateTime(txtConvocacao.Text);
+            j.DtDispensa = Convert.ToDateTime(txtDispensa.Text);
+
+            lblMensagem.Text = j.CalcularIndenizacaoFifa();
+        }
     }
-
-
-
-
 }

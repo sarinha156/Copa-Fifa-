@@ -46,3 +46,9 @@ D:\Sarah\ds\Copa-Fifa-Final-master\Library\obj\Debug\Library.csprojAssemblyRefer
 D:\Sarah\ds\Copa-Fifa-Final-master\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 D:\Sarah\ds\Copa-Fifa-Final-master\Library\obj\Debug\Library.dll
 D:\Sarah\ds\Copa-Fifa-Final-master\Library\obj\Debug\Library.pdb
+D:\2 SEMESTRE\Sarah\ds\Copa-Fifa-Final-master\Library\bin\Debug\Library.dll
+D:\2 SEMESTRE\Sarah\ds\Copa-Fifa-Final-master\Library\bin\Debug\Library.pdb
+D:\2 SEMESTRE\Sarah\ds\Copa-Fifa-Final-master\Library\obj\Debug\Library.csprojAssemblyReference.cache
+D:\2 SEMESTRE\Sarah\ds\Copa-Fifa-Final-master\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+D:\2 SEMESTRE\Sarah\ds\Copa-Fifa-Final-master\Library\obj\Debug\Library.dll
+D:\2 SEMESTRE\Sarah\ds\Copa-Fifa-Final-master\Library\obj\Debug\Library.pdb

@@ -151,7 +151,7 @@
                 <div>
                     <asp:Button ID="btnExibirDados" runat="server" Text="Exibir Dados" OnClick="btnExibirDados_Click"  CssClass="btn btn-primary"/>
                     <asp:Button ID="btnCalcularIdade" runat="server" Text="Calcular idade" OnClick="btnCalcularIdade_Click" CssClass="btn btn-success"/>
-                    <asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" CssClass="btn btn-info" />
+                    <asp:Button ID="btnCalcularIndenizacaoFifa" runat="server" Text="Calcular indenização" OnClick="btnCalcularIndenizacaoFifa_Click" CssClass="btn btn-warning"/>
                 </div>
             </div>
 
